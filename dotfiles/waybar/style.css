@@ -1,0 +1,100 @@
+/* Matugen colors */
+@import "colors-matugen.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+/* Bar container */
+window#waybar {
+  background: transparent;
+}
+
+/* Shared pill look */
+#clock,
+#workspaces,
+#tray {
+  background-color: @surface;
+  color: @on_surface;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* Clock (left) */
+#clock {
+  margin-left: 6px;
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+/* Workspace pill */
+#workspaces {
+  padding: 4px;
+}
+
+/* Individual workspace buttons */
+#workspaces button {
+  padding: 4px 10px;
+  margin: 0 2px;
+  border-radius: 999px;
+  background: transparent;
+  color: @on_surface;
+  transition: all 0.2s ease;
+}
+
+/* Active workspace (the red pill in your screenshot) */
+#workspaces button.active {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+/* Hover effect */
+#workspaces button:hover {
+  background-color: @secondary_container;
+  color: @on_secondary_container;
+}
+
+/* Tray (right pill) */
+#tray {
+  margin-right: 6px;
+}
+
+/* =========================
+   Status pill (notifications + power)
+   ========================= */
+
+/* Group container → single pill */
+#options {
+  background-color: @surface;
+  color: @on_surface;
+  padding: 6px 4px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+/* Icons inside the status pill */
+#custom-notifications,
+#custom-power {
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+  color: white;
+  min-width: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-power {
+  padding-right: 5px;
+}
+
+/* Hover feedback per icon (no background change) */
+#custom-notifications:hover,
+#custom-power:hover {
+  color: @primary;
+}

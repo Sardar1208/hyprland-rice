@@ -1,0 +1,46 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+
+  "modules-center": ["clock", "hyprland/workspaces", "group/options"],
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{id}",
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "group/options": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/notifications",
+      "custom/power"
+    ]
+  },
+  
+  "custom/notifications": {
+    "format": "󰒓",
+    "tooltip": false,
+    "on-click": "echo notifications"
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "echo power"
+  }
+}
+}
+
