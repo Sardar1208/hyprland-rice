@@ -3,75 +3,121 @@ configuration {
   combi-modes: [ window, drun, run ];
 }
 
-/* Insert theme modifications after this */
+/* =====================
+   Global
+===================== */
 
 * {
     bg: #f6efe9;
     accent: #d98c8c;
+    text: #4a4a4a;
 
     background-color: transparent;
-    opacity: 1;
+}
+
+/* =====================
+   Window
+===================== */
+
+window {
+    width: 40%;
+    background-color: @bg;
+    border-radius: 28px;
+    margin: 0px;
+    padding: 0px;
+    border: 2px;
+}
+
+mainbox {
+    children: [input-wrapper, listview];
+}
+
+input-wrapper {
+    children: [ inputbar ];
+    orientation: vertical;
+    height: 260px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    expand: false;
+    background-image: url("/home/sarthak/Downloads/wallpaper.jpg", width);
+    background-position: center;
+}
+
+/* =====================
+   Input Bar (Search)
+===================== */
+
+inputbar {
+    children: [ prompt, entry ];
+    spacing: 12px;
+    padding: 16px 24px;
+    margin: 60px 60px;
+    border-radius: 100px;
+    background-color: #efe7e2;
+}
+
+prompt {
+    text-color: @text;
+    font: "Inter 11";
 }
 
 entry {
     placeholder: "Type here";
+    text-color: @text;
+    font: "Inter 11";
+    background-color: transparent;
 }
 
-window {
-    padding: 30px;
-    background-color: @bg;
-    border-radius: 24px;
-}
+/* =====================
+   List Layout
+===================== */
 
 listview {
-  columns: 2;
-  dynamic: true;
-  fixed-height: true;
-  scrollbar: false;
-  spacing: 2em 0.5em;
-  lines: 5;
-  require-input: true;
+	columns: 2;
+	dynamic: true;
+	fixed-height: true;
+	scrollbar: false;
+	spacing: 2em 0.5em;
+	lines: 4;
+        border: none;
+        padding: 40px 40px 40px 40px;
+
 }
 
+/* =====================
+   Elements
+===================== */
+
 element {
-  spacing: 5px;
-  board-radius: 20px;
-  children: [custombox];
-  background-color: @bg;
-  padding: 0px;
+	spacing: 5px;
+	children: [custombox];
+	background-color: @bg;
+	padding: 0px;
+        border-radius: 18px;
 }
 
 custombox {
-  children: [element-icon, element-text];
-  orientation: horizontal;
-  height: 50px;
-  background-color: @bg;
-  border-color: @bg;
-  border: none;
-  padding: 10px;
+	children: [element-icon, element-text];
+	orientation: horizontal;
+	height: 50px;
+	background-color: @bg;
+	border-color: @bg;
+	border: none;
+	padding: 10px;
 }
 
 element-icon {
-  size: 1.5em;
+	size: 1.5em;
 }
 
 element-text {
-  vertical-align: 0.5;
-  font: "Inter 10";
-}
-
-element selected {
-  background-color: blue;
+	vertical-align: 0.5;
+	font: "Inter 10";
+        padding: 5px 15px;
 }
 
 custombox selected {
-    // border-radius: 25px;
-    background-color: @accent;
-    text-color: #ffffff;
+	background-color: @accent;
+	text-color: #ffffff;
 }
-
-inputbar {
-  padding: 3em;
-}
-
 
