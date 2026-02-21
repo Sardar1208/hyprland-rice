@@ -1,0 +1,77 @@
+configuration {
+  modes: [ combi, drun ];
+  combi-modes: [ window, drun, run ];
+}
+
+/* Insert theme modifications after this */
+
+* {
+    bg: #f6efe9;
+    accent: #d98c8c;
+
+    background-color: transparent;
+    opacity: 1;
+}
+
+entry {
+    placeholder: "Type here";
+}
+
+window {
+    padding: 30px;
+    background-color: @bg;
+    border-radius: 24px;
+}
+
+listview {
+  columns: 2;
+  dynamic: true;
+  fixed-height: true;
+  scrollbar: false;
+  spacing: 2em 0.5em;
+  lines: 5;
+  require-input: true;
+}
+
+element {
+  spacing: 5px;
+  board-radius: 20px;
+  children: [custombox];
+  background-color: @bg;
+  padding: 0px;
+}
+
+custombox {
+  children: [element-icon, element-text];
+  orientation: horizontal;
+  height: 50px;
+  background-color: @bg;
+  border-color: @bg;
+  border: none;
+  padding: 10px;
+}
+
+element-icon {
+  size: 1.5em;
+}
+
+element-text {
+  vertical-align: 0.5;
+  font: "Inter 10";
+}
+
+element selected {
+  background-color: blue;
+}
+
+custombox selected {
+    // border-radius: 25px;
+    background-color: @accent;
+    text-color: #ffffff;
+}
+
+inputbar {
+  padding: 3em;
+}
+
+
